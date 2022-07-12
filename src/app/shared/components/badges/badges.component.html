@@ -1,0 +1,11 @@
+<ng-container *ngIf="badges">
+  <span
+    class="badge ms-1 py-1"
+    *ngFor="let badge of badges"
+    [class.rounded-pill]="isPill"
+    [class.text-dark]="isTextDark(badge.color || 'secondary')"
+    [ngClass]="'bg-' + (badge.color || 'secondary')"
+  >
+    {{ badge.value }}
+  </span>
+</ng-container>

@@ -1,0 +1,25 @@
+<!-- Component header -->
+<app-card
+  heading="Songs Dashboard"
+  [badges]="['Smart Component', 'Feature Module']"
+>
+  <ng-container *ngIf="songs$ | async as songs">
+    <div class="row">
+      <div class="col col-6 mb-3">
+        <!-- Song List Child -->
+        <app-song-list
+          [songs]="songs"
+          heading="Songs List"
+          [selectedSong]="selectedSong$.value"
+          (onSongSelect)="handleSongSelect($event)"
+        ></app-song-list>
+      </div>
+
+      <ng-container *ngIf="selectedSong$ | async as selectedSong">
+        <div class="col col-6">
+          <app-song-details [selectedSong]="selectedSong"></app-song-details>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</app-card>

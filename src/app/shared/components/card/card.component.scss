@@ -1,0 +1,31 @@
+@mixin reset-y-padding($y, $top: $y, $bottom: $y) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin reset-font-size($size, $lineHeight: $size) {
+  font-size: $size;
+  line-height: $lineHeight;
+}
+
+:host .card {
+  &-header {
+    @include reset-y-padding(4px);
+    @include reset-font-size(14px);
+  }
+
+  &-body {
+    padding: 40px 30px;
+  }
+
+  &-footer {
+    @include reset-y-padding(2px);
+    @include reset-font-size(13px, 12px);
+  }
+
+  .badge {
+    @include reset-y-padding(2px, 0.5px, 2px);
+    @include reset-font-size(10px, 12px);
+    background-color: #999 !important;
+  }
+}

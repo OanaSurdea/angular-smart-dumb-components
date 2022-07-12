@@ -1,0 +1,16 @@
+<div class="card shadow">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span>{{ heading }}</span>
+    <ng-container *ngIf="badges">
+      <div>
+        <span class="badge bg-secondary ms-1" *ngFor="let badge of badges">
+          {{ badge }}
+        </span>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>

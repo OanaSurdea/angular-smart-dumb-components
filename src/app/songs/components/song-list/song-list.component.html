@@ -1,0 +1,13 @@
+<app-card [heading]="heading" [badges]="['Dumb Component', 'Songs child']">
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      [class.active]="song === selectedSong"
+      *ngFor="let song of songs"
+      (click)="selectSong(song)"
+    >
+      <h6 class="mb-0">{{ song.title }}</h6>
+      <small>{{ song.genre }}</small>
+    </li>
+  </ul>
+</app-card>

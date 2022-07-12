@@ -1,0 +1,16 @@
+<app-card [heading]="heading" [badges]="['Dumb Component', 'Songs child']">
+  <ul class="list-group">
+    <li
+      class="list-group-item pb-0"
+      *ngFor="let writer of selectedSong.writers"
+    >
+      <h6>
+        {{ writer.name }}
+        <app-badges
+          [isPill]="true"
+          [badges]="[{ value: writer.region, color: 'dark' }]"
+        ></app-badges>
+      </h6>
+    </li>
+  </ul>
+</app-card>

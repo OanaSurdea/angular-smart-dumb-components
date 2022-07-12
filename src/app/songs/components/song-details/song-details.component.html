@@ -1,0 +1,24 @@
+<!-- Artists Child -->
+<app-song-artists
+  *ngIf="selectedSong?.artists"
+  heading="Artists"
+  [selectedSong]="selectedSong"
+></app-song-artists>
+
+<br />
+
+<!-- Writers Child -->
+<app-song-writers
+  *ngIf="selectedSong?.writers"
+  heading="Writers"
+  [selectedSong]="selectedSong"
+></app-song-writers>
+
+<br />
+
+<!-- Writers Child -->
+<app-song-statistics
+  *ngIf="selectedSong?.statistics"
+  heading="Statistics"
+  [selectedSong]="selectedSong"
+></app-song-statistics>
